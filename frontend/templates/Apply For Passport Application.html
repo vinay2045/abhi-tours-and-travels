@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passport Application - Abhi Tours & Travels</title>
+    <script>
+        (function() {
+          const storedTheme = localStorage.getItem('theme');
+          if (storedTheme) {
+            document.documentElement.setAttribute('data-theme', storedTheme);
+          } else {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = prefersDark ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+          }
+          // Prevents flash of unstyled content
+          document.documentElement.classList.add('theme-applied');
+        })();
+        </script>
+        
     
     <!-- Advanced page loader script - must be at the top -->
     <script src="../js/page-loader.js"></script>
@@ -54,7 +70,7 @@
                 <img src="../images/WhatsApp_Image_2025-03-17_at_19.38.53_85a826c5-removebg-preview.png" alt="Abhi Tours & Travels Logo">
             </div>
             <div id="nav-part3">
-                <a href="index.html"><h3><span>Home</span> <span><i class='bx bxs-home-alt-2'></i></span></h3></a>
+                <a href="/index.html"><h3><span>Home</span> <span><i class='bx bxs-home-alt-2'></i></span></h3></a>
                 <a href="aboutus.html"><h3><span>About Us</span> <span><i class='bx bxs-invader'></i></span></h3></a>
                 <h3 id="ourservices"><span>Our Services</span> <span><i class='bx bxs-invader'></i></span></h3>
                 <h3 id="trips"><span>Trips</span> <span><i class='bx bxl-airbnb'></i></span></h3>
@@ -314,7 +330,7 @@
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html"><i class='bx bx-chevron-right'></i> Home</a></li>
+                        <li><a href="/index.html"><i class='bx bx-chevron-right'></i> Home</a></li>
                         <li><a href="aboutus.html"><i class='bx bx-chevron-right'></i> About Us</a></li>
                         <li><a href="#"><i class='bx bx-chevron-right'></i> Our Services</a></li>
                         <li><a href="#"><i class='bx bx-chevron-right'></i> Tour Packages</a></li>

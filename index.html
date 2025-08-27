@@ -4,15 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhi Tours & Travels - Time to Travel</title>
+    <script>
+        (function() {
+          const storedTheme = localStorage.getItem('theme');
+          if (storedTheme) {
+            document.documentElement.setAttribute('data-theme', storedTheme);
+          } else {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = prefersDark ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+          }
+          // Prevents flash of unstyled content
+          document.documentElement.classList.add('theme-applied');
+        })();
+        </script>
+        
     
     <!-- Advanced page loader script - must be at the top -->
-    <script src="../js/page-loader.js"></script>
+    <!-- <script src="./frontend/js/lazy-load.js"></script> -->
     
     <!-- Theme handler script to prevent theme flash -->
-    <script src="../js/theme-handler.js"></script>
+    <script src="./frontend/js/theme-handler.js"></script>
     
     <!-- Critical CSS - inlined for fastest rendering -->
-    <link rel="stylesheet" href="../css/critical.css">
+    <!-- <link rel="stylesheet" href="./frontend/css/style.css"> -->
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +37,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     
     <!-- Defer non-critical CSS -->
-    <link rel="stylesheet" href="../css/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="./frontend/css/main.css" media="print" onload="this.media='all'">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" media="print" onload="this.media='all'"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" media="print" onload="this.media='all'">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -29,9 +45,11 @@
     
     <!-- Fallback for browsers that don't support JS loading -->
     <noscript>
-        <link rel="stylesheet" href="../css/style.css">
+        <!-- <link rel="stylesheet" href="./frontend/css/style.css">
 
-        <link rel="stylesheet" href="../css/main.css">
+
+
+        <link rel="stylesheet" href="./frontend/css/main.css"> -->
         <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -39,10 +57,13 @@
     </noscript>
     
     <!-- Enhanced lazy loading script -->
-    <script src="../js/lazy-load.js" defer></script>
+    <!-- <script src="./frontend/js/lazy-load.js" defer></script> -->
     
     <!-- Script loader for deferred JavaScript loading -->
-    <script src="../js/script-loader.js" defer></script>
+    <!-- <script src="./frontend/js/script-loader.js" defer></script> -->
+    <link rel="stylesheet" href="./frontend/css/style.css">
+<link rel="stylesheet" href="./frontend/css/main.css">
+
 </head>
 <body>
     <div class="container">
@@ -53,14 +74,14 @@
                 <i class="ri-menu-3-line"></i>
             </div>
             <div id="nav-part2">
-                <img src="../images/WhatsApp_Image_2025-03-17_at_19.38.53_85a826c5-removebg-preview.png" alt="Abhi Tours & Travels Logo">
+                <img src="./frontend/images/WhatsApp_Image_2025-03-17_at_19.38.53_85a826c5-removebg-preview.png" alt="Abhi Tours & Travels Logo">
             </div>
             <div id="nav-part3">
                 <a href="index.html"><h3><span>Home</span> <span><i class='bx bxs-home-alt-2'></i></span></h3></a>
-                <a href="aboutus.html"><h3><span>About Us</span> <span><i class='bx bxs-invader'></i></span></h3></a>
+                <a href="./frontend/templates/aboutus.html"><h3><span>About Us</span> <span><i class='bx bxs-invader'></i></span></h3></a>
                 <h3 id="ourservices"><span>Our Services</span> <span><i class='bx bxs-invader'></i></span></h3>
                 <h3 id="trips"><span>Trips</span> <span><i class='bx bxl-airbnb'></i></span></h3>
-                <a href="contactus.html"><h3>Contact Us <span><i class='bx bx-mail-send'></i></span></h3></a>
+                <a href="./frontend/templates/contactus.html"><h3>Contact Us <span><i class='bx bx-mail-send'></i></span></h3></a>
             </div>
             <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite">
                 <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
@@ -92,6 +113,7 @@
                 
                 <!-- Navigation buttons -->
                 <button class="hero-carousel-nav prev">&#10094;</button>
+                <img src="./frontend/images/photo-1645629022405-a3b40f0287e6.avif" alt="">
                 <button class="hero-carousel-nav next">&#10095;</button>
                 
                 <!-- Indicators -->
@@ -106,7 +128,7 @@
             <div class="blog-header">
                 <div>
                     <h2 class="blog-title">Abhi Tours & Travels</h2>
-                    <img class="blog-image" src="../images/intercontinental-transport-abstract-concept-vector-illustration_335657-5692.jpg" alt="">
+                    <img class="blog-image" src="./frontend/images/intercontinental-transport-abstract-concept-vector-illustration_335657-5692.jpg" alt="">
                     
                 </div>
                 <div>
@@ -120,7 +142,7 @@
 
             <div class="blog-grid">
                 <div class="blog-card-large">
-                    <img src="../images/photo-1645629022405-a3b40f0287e6.avif" loading="lazy">
+                    <img src="./frontend/images/photo-1645629022405-a3b40f0287e6.avif" loading="lazy">
                    
                     <div class="card-content white-bg">
                         <h3 class="card-title">Shimla & Kullu - ₹15,999</h3>
@@ -135,7 +157,7 @@
 
                 <div class="right-column">
                     <div class="blog-card blog-card-sm">
-                        <img src="../images/photo-1590001155093-a3c66ab0c3ff.avif" alt="Maldives Tour" loading="lazy">
+                        <img src="./frontend/images/photo-1590001155093-a3c66ab0c3ff.avif" alt="Maldives Tour" loading="lazy">
                         
                         <div class="card-content white-bg">
                             <h3 class="card-title">Maldives - ₹65,999</h3>
@@ -149,7 +171,7 @@
                     </div>
 
                     <div class="blog-card blog-card-sm">
-                        <img src="../images/premium_photo-1661929242720-140374d97c94.avif" alt="Thailand Tour" loading="lazy">
+                        <img src="./frontend/images/premium_photo-1661929242720-140374d97c94.avif" alt="Thailand Tour" loading="lazy">
                         
                         <div class="card-content white-bg">
                             <h3 class="card-title">Thailand - ₹31,999</h3>
@@ -205,7 +227,7 @@
             
             <div class="footer-container">
                 <div class="footer-logo-section">
-                    <img src="../images/WhatsApp_Image_2025-03-17_at_19.38.53_85a826c5-removebg-preview.png" alt="Abhi Tours & Travels Logo">
+                    <img src="./frontend/images/WhatsApp_Image_2025-03-17_at_19.38.53_85a826c5-removebg-preview.png" alt="Abhi Tours & Travels Logo">
                     <p class="footer-tagline">Time to Travel - Your gateway to extraordinary experiences and unforgettable adventures.</p>
                     <div class="footer-social">
                         <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -220,10 +242,10 @@
                     <h3>Quick Links</h3>
                     <ul> 
                         <li><a href="index.html"><i class='bx bx-chevron-right'></i> Home</a></li>
-                        <li><a href="aboutus.html"><i class='bx bx-chevron-right'></i> About Us</a></li>
+                        <li><a href="./frontend/templates/aboutus.html"><i class='bx bx-chevron-right'></i> About Us</a></li>
                         <li><a href="#"><i class='bx bx-chevron-right'></i> Our Services</a></li>
                         <li><a href="#"><i class='bx bx-chevron-right'></i> Tour Packages</a></li>
-                        <li><a href="contactus.html"><i class='bx bx-chevron-right'></i> Contact Us</a></li>
+                        <li><a href="./frontend/templates/contactus.html"><i class='bx bx-chevron-right'></i> Contact Us</a></li>
                         <li><a href="#"><i class='bx bx-chevron-right'></i> Privacy Policy</a></li>
                     </ul>
                 </div>
@@ -254,7 +276,7 @@
         </footer>
     </div>
     <!-- Properly reference the script file with the correct path -->
-    <script src="../js/script.js" defer></script>
+    <!-- <script src="./main.js" defer></script> -->
 
     <!-- Contact Icon and Form -->
     <a href="#" class="contact-float" id="contactBtn">
@@ -297,5 +319,6 @@
             </div>
         </div>
     </template>
+    <script src="./main.js"></script>
 </body>
 </html>
